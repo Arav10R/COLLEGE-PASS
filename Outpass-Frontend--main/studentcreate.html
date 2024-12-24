@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT - Create Account</title>
+    <link rel="stylesheet" href="studentcreate.css">
+    <script>
+        function validatePassword() {
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+            return true;
+        }
+
+        function handleSubmit(event) {
+            if (!validatePassword()) {
+                event.preventDefault(); // Prevent form submission
+            } else {
+                window.location.href = "homelogin.html"; // Redirect to the home login page
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <img src="download.png" alt="NFSU Logo" class="logo">
+            <div class="header-text">
+                <h1>KIT COLLEGE</h1>
+                <h2>KIT Campus, COIMBATORE 641402</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-container">
+        <h3>CREATE STUDENT ACCOUNT</h3>
+        <form action="submit" method="post" onsubmit="handleSubmit(event)">
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required autofocus>
+
+            <!-- DOB -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Gender -->
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+            </select>
+
+            <!-- Hostel Number -->
+            <label for="hostel">Hostel Number:</label>
+            <select id="hostel" name="hostel" required>
+                <option value="main">Main Building</option>
+                <option value="boys-2">New Hostel</option>
+            </select>
+
+
+            <!-- Room Number -->
+            <label for="room">Room Number:</label>
+            <input type="text" id="room" name="room" placeholder="e.g., 10/G04" required>
+
+            <!-- Enrollment Number -->
+            <label for="enroll">Enrollment Number:</label>
+            <input type="number" id="enroll" name="enroll" placeholder="12 digit number" required>
+
+            <!-- Department -->
+            <label for="dept">Department:</label>
+            <select id="dept" name="dept" required>
+                <option value="CSBS">CSBS</option>
+                <option value="CSE">CSE</option>
+                <option value="AIDS">AIDS</option>
+                <option value="AIML">AIML</option>
+                <option value="EEE">EEE</option>
+                <option value="ECE">ECE</option>
+                <option value="MECH">MECH</option>
+                <option value="BME">BME</option>
+            </select>
+
+            <!-- Year of Study -->
+            <label for="year">Year of Study:</label>
+            <select id="year" name="year" required>
+                <option value="1st">1st Year</option>
+                <option value="2nd">2nd Year</option>
+                <option value="3rd">3rd Year</option>
+                <option value="4th">4th Year</option>
+            </select>
+
+            <!-- Academic Coordinator -->
+            <label for="coordinator">Academic Coordinator:</label>
+            <select id="coordinator" name="coordinator" required>
+                <option value="name of Coordinator">name of coordinator</option>
+                <option value="coordinator">aravind</option>
+                <option value="coordinator">ruban</option>
+                <option value="coordinator">rahul</option>
+            </select>
+
+            <!-- Hostel Incharge -->
+            <label for="hostelIncharge">Hostel Incharge:</label>
+            <select id="hostelIncharge" name="hostelIncharge" required>
+                <option value="MS.SHANAZ">MS.SHANAZ (Girls)</option>
+                <option value="MR.NIVAS">MR.NIVAS(Boys)</option>
+            </select>
+
+            <!-- Mail ID -->
+            <label for="email">Mail ID:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Personal Phone Number -->
+            <label for="phone">Personal Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <!-- Parents' Phone Number -->
+            <label for="parentPhone">Parents' Phone Number:</label>
+            <input type="tel" id="parentPhone" name="parentPhone" required>
+
+            <!-- Address -->
+            <label for="praddress">Permanent Residential Address:</label>
+            <textarea id="praddress" name="praddress" rows="4" required></textarea>
+
+            <!-- Password -->
+            <label for="password">Create Password:</label>
+            <input type="password" id="password" name="password" required pattern=".{8,16}">
+
+            <!-- Confirm Password -->
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" required pattern=".{8,16}">
+
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
